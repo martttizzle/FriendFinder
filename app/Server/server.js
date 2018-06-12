@@ -5,21 +5,18 @@ var app = express();
 var path = require("path");
 var PORT = process.env.PORT || 8080;
  
-app.get('/', function (req, res) {
-  res.send('Hello World')
-})
-
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
  
 // parse application/json
 app.use(bodyParser.json())
  
-app.use(function (req, res) {
-  res.setHeader('Content-Type', 'text/plain')
-  res.write('you posted:\n')
-  res.end(JSON.stringify(req.body, null, 2))
-})
+/* ROUTER
+when someone access website url it will route to html file. ex. www.movie/condiments.com
+The below points our server to a series of "route" files.
+These routes give our server a "map" of how to respond when users visit or request data from various URLs. */
+require("../Routing/htmlRoutes")(app);
+require("../Routing/apiRoutes")(app);
 
 
 
