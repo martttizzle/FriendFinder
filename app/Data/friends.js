@@ -1,5 +1,7 @@
+const userAnswer = require("../Routing/apiRoutes.js")
 
-var friendArray = [
+
+var friendsArray = [
     {
         customerName: "Mike Jones",
         photo: "www.yahoo.com/me/photos",
@@ -56,7 +58,10 @@ var friendArray = [
         q10:3
     }
 ];
+ 
+ 
 
 
 
-module.exports = friendArray;
+
+module.exports = friendsArray;
