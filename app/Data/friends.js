@@ -14,12 +14,12 @@ var friendsArray = [
         q7: 2,
         q8: 2,
         q9: 4,
-        q10: 3
+        q10:3
     }, {
         customerName: "Vinod Ramdin",
         photo: "www.photo.com/photo/recent",
-        q2: 2,
-        q1: 1,
+        q1: 2,
+        q2: 1,
         q3: 2,
         q4: 2,
         q5: 4,
