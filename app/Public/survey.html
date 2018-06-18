@@ -180,67 +180,55 @@
       <i class="fa fa-check-circle" aria-hidden="true"></i>
       Submit</button>
 
-    <hr>
-    <footer class="footer">
-      <div class="container">
-        <p>
-          <a href="/api/friends">API Friends List</a> |
-          <a href="https://github.com/afhaque/friendfinder">GitHub Repo</a>
-        </p>
-      </div>
-    </footer>
-
-
-
-    <!-- Modal 
-  <div id="results-modal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-
-      // Modal content
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title"><strong>Best Match</strong></h2>
-        </div>
-        <div class="modal-body">
-          <h2 id="match-name"></h2>
-          <img id="match-img" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-
-    </div>
-  </div>
- -->
-
-
+    
 
     <!-- Modal -->
-    <!-- <div id="results-modal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-
-        //Modal content 
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title"><strong>Best Match</strong></h2>
-        </div>
-        <div class="modal-body">
-          <h2 id="match-name"></h2>
-           
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    <div class="container mt-3">
+      <h2>Modal Example</h2>
+      <!-- Button to Open the Modal -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+        Open modal
+      </button>
+    
+      <!-- The Modal -->
+      <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+          
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Modal Heading</h4>
+              <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+            
+            <!-- Modal body -->
+            <div class="modal-body" id="results">
+              Modal body..
+            </div>
+            
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+            
+          </div>
         </div>
       </div>
-
+      
     </div>
-  </div> -->
-
+  
+  <hr>
+  <footer class="footer">
+    <div class="container">
+      <p>
+        <a href="/api/friends">API Friends List</a> |
+        <a href="https://github.com/afhaque/friendfinder">GitHub Repo</a>
+      </p>
+    </div>
+  </footer>
 
     <script type="text/javascript">
+      const finalArry = require("../Routing/apiRoutes.js");
 
       $("#submit").on("click", function (event) {
         event.preventDefault();
@@ -261,8 +249,12 @@
 
         var currentURL = window.location.origin;
         $.post(currentURL + "/api/friends", newReservation, function (data) {
+         
         });
       });
+      
+       console.log(finalArry);
+
 
     </script>
 </body>
