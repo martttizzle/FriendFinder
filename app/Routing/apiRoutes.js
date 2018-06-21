@@ -5,13 +5,11 @@ module.exports = function (app) {
 
   app.get("/api/friends", function (req, res) {
     res.json(preFriends);
-
   });
 
   app.post("/api/friends", function (req, res) {
     // preFriends.push(req.body);
     userInput(req.body);
-
   })
 };
 
@@ -40,7 +38,7 @@ function userInput(userIpt) {
   }
   frdChooser(ordNum);
 }
-
+//var q2 = "q2";//Works a[n][q2];
 function frdChooser(n) {
   preFrdOne.push(a[n].q1);
   preFrdOne.push(a[n].q2);
@@ -53,7 +51,7 @@ function frdChooser(n) {
   preFrdOne.push(a[n].q9);
   preFrdOne.push(a[n].q10);
   n++;
-  
+
   preFrdTwo.push(a[1].q1);
   preFrdTwo.push(a[1].q2);
   preFrdTwo.push(a[1].q3);
@@ -102,6 +100,8 @@ function frdChooser(n) {
   totalDiff(PRE_TWO);
   totalDiff(PRE_THREE);
   totalDiff(PRE_FOUR);
+  frdSelection(results);
+
 }
 
 function totalDiff(preFriendInput) {
@@ -119,9 +119,25 @@ function adder(differences) {
   }
   results.push(num);
   difference = [];
-  console.log(results);
+  preFrdOne = [];
+  preFrdTwo = [];
+  preFrdThree = [];
+  preFrdFour = [];
+
+ console.log(results);
+ 
+ 
 }
 
-module.exports = results;
-//call the frdChooser pass arg of 1 then 2 then 3...
-//after eache prefriend reset back arrays so next prefriend can be calculated.
+
+
+function frdSelection(results) {
+
+   var lowNum = Math.min.apply(null, results);
+   var index = results.findIndex(results => results === lowNum);
+
+   console.log(a[index].customerName);
+
+  console.log(index, "lowest Number: " + lowNum);
+ 
+}

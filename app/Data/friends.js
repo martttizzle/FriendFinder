@@ -1,4 +1,4 @@
-const userAnswer = require("../Routing/apiRoutes.js")(app);
+const userAnswer = require("../Routing/apiRoutes.js") 
 
 
 var friendsArray = [
