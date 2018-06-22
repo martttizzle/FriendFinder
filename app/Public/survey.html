@@ -228,6 +228,10 @@
   </footer>
 
     <script type="text/javascript">
+
+    //  const choosenfriend = require("../Data/friends.js");
+    //  console.log(choosenfriend.customerName);
+
       $("#submit").on("click", function (event) {
         event.preventDefault();
         var newReservation = {
@@ -247,13 +251,10 @@
 
         var currentURL = window.location.origin;
         $.post(currentURL + "/api/friends", newReservation, function (data) {
-         console.log(data);
+        console.log(data, "something");
         });
-        
-
       });
       
-       
 
 
     </script>

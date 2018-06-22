@@ -1,17 +1,15 @@
 const preFriends = require("../Data/friends.js");
 
 module.exports = function (app) {
-
-
   app.get("/api/friends", function (req, res) {
-    res.json(preFriends);
-     
+    res.json(preFriends);  
   });
-
   app.post("/api/friends", function (req, res) {
-   
- userInput(req.body);
- 
+    // preFriends.push(req.body);  
+  userInput(req.body);    
+    res.json("preFriends[4].person");
+})
+};
 var userAns = [];
 var difference = [];
 var preFrdOne = [];
@@ -122,15 +120,13 @@ function adder(differences) {
   preFrdTwo = [];
   preFrdThree = [];
   preFrdFour = [];
-
- console.log(results); 
 }
 
 function frdSelection(results) {
    var lowNum = Math.min.apply(null, results);
    var index = results.findIndex(results => results === lowNum);
    var person = a[index].customerName;  
-  console.log(index, "lowest Number: " + lowNum);
+  a.push({person});
+  console.log("Index: " + index, "lowest Number: " + lowNum + " Person Name " + person);
 }
-})
-};
+
