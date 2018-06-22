@@ -5,14 +5,13 @@ module.exports = function (app) {
 
   app.get("/api/friends", function (req, res) {
     res.json(preFriends);
+     
   });
 
   app.post("/api/friends", function (req, res) {
-    // preFriends.push(req.body);
-    userInput(req.body);
-  })
-};
-
+   
+ userInput(req.body);
+ 
 var userAns = [];
 var difference = [];
 var preFrdOne = [];
@@ -124,20 +123,14 @@ function adder(differences) {
   preFrdThree = [];
   preFrdFour = [];
 
- console.log(results);
- 
- 
+ console.log(results); 
 }
-
-
 
 function frdSelection(results) {
-
    var lowNum = Math.min.apply(null, results);
    var index = results.findIndex(results => results === lowNum);
-
-   console.log(a[index].customerName);
-
+   var person = a[index].customerName;  
   console.log(index, "lowest Number: " + lowNum);
- 
 }
+})
+};
